@@ -8,7 +8,7 @@ AR       = ar -r
 HWTOPO   = yes
 CPPFLAGS =
 DFLAGS   = -D__GFORTRAN -D__FFTSG -D__LIBINT -D__parallel -D__SCALAPACK -D__BLACS -D__FFTW3 -D__MAX_CONTR=3 -D__HAS_smm_dnn -D__HAS_NO_GETLOG -D__STATM_RESIDENT -D__DBCSR_CUDA -D__CUDA_PROFILING -D__LIBINT_MAX_AM=6 -D__LIBDERIV_MAX_AM1=5 -D__GEMINI -D__LIBXC2
-FCFLAGS  = -fopenmp -g -O3 -ffast-math -funroll-loops -ffree-form $(DFLAGS) 
+FCFLAGS  = -fopenmp -g -O3 -ffast-math -funroll-loops -ffree-form -fbounds-check $(DFLAGS) 
 CFLAGS   = $(FCFLAGS) 
 LDFLAGS  = $(FCFLAGS)
 NVFLAGS  = $(DFLAGS) -g -O2 -arch sm_35
