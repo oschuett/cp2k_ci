@@ -18,11 +18,11 @@ def main():
         content = open(fn).read()
         flops = np.array(re.findall("\s(\d+) Mflops/rank", content), np.int)
         flops_max = np.amax(flops[1:])
-        key = fn.rsplit(".", 1)
+        key = fn.rsplit(".", 1)[0]
         table[key] = flops_max / 1000.0
 
     print(", ".join(sorted(table.keys())))
-    print(", ".join([table[k] for k in sorted(table.keys())]))
+    print(", ".join(["%f"%table[k] for k in sorted(table.keys())]))
 
 #===============================================================================
 main()
