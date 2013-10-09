@@ -1,0 +1,23 @@
+&GLOBAL
+  PROGRAM_NAME TEST
+  RUN_TYPE NONE
+  &DBCSR
+    mm_driver SMM
+  &END DBCSR
+&END GLOBAL
+&TEST
+  &CP_DBCSR
+     M 13800
+     N 13800
+     K 6900
+     TRANSA FALSE
+     TRANSB TRUE
+     N_LOOP 5
+     ASPARSITY 0.5
+     BSPARSITY 0.5
+     CSPARSITY 0.5
+     bs_m 1 23
+     bs_n 1 23
+     bs_k 1 23
+  &END
+&END TEST
