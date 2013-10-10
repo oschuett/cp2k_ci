@@ -9,13 +9,16 @@ import numpy as np
 #===============================================================================
 def main():
     if(len(sys.argv) < 2):
-        print("libtest_analyse.py <out-file1> ... <out-fileN>")
+        print("libtest_analyse.py <ref_checksum> <out-file1> ... <out-fileN>")
         sys.exit(1)
 
     table = dict()
-    files = sys.argv[1:]
+    reference = float(sys.argv[1])
+    files = sys.argv[2:]
     for fn in files:
         content = open(fn).read()
+        checksum = float(re.search("Final checksums\s+(.+?)\s+", content).group(1))
+        assert(abs(checksum-reference) < 0.05)
         flops = np.array(re.findall("\s(\d+) Mflops/rank", content), np.int)
         flops_max = np.amax(flops[1:])
         key = fn.rsplit(".", 1)[0]
@@ -27,3 +30,4 @@ def main():
 #===============================================================================
 main()
 #EOF
+
