@@ -9,7 +9,7 @@ import numpy as np
 #===============================================================================
 def main():
     if(len(sys.argv) < 2):
-        print("libtest_analyse.py <ref_checksum> <out-file1> ... <out-fileN>")
+        print("libtest2csv.py <ref_checksum> <out-file1> ... <out-fileN>")
         sys.exit(1)
 
     table = dict()
