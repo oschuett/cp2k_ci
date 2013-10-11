@@ -1,0 +1,23 @@
+#
+# gfortran arch file, currently for testing gfortran (svn version 4.3)
+# status on http://gcc.gnu.org/bugzilla/show_bug.cgi?id=29975
+#
+CC       = cc
+CPP      = 
+NVCC     = nvcc -D__GNUC_MINOR__=6
+NVFLAGS  = $(DFLAGS) -g -O2 -arch sm_35 --compiler-options -fopenmp
+
+FC       = mpif90 
+LD       = mpif90
+
+AR       = ar -r
+
+CPPFLAGS = 
+DFLAGS   = -D__GFORTRAN -D__FFTSG -D__LIBINT -D__FFTW3 -D__parallel -D__SCALAPACK -D__BLACS -D__HAS_smm_dnn -D__HAS_smm_vec -D__NO_MPI_THREAD_SUPPORT_CHECK -D__DBCSR_CUDA -D__CUDA_PROFILING -D__LIBXC2 -D__STATM_RESIDENT
+FCFLAGS  = -fno-omit-frame-pointer -fopenmp -O3 -march=native -ffast-math -ffree-form -g $(DFLAGS)
+LDFLAGS  = $(FCFLAGS)  -L/data/vjoost/libint/install/lib/ -L/data/schuetto/libsmm/lib/  -L/data/vjoost/scalapack/scalapack_installer_1.0.2/install/lib/ -L/usr/local/cuda/lib64 -L/data/vjoost/libxc-2.0.1/install/lib
+
+LIBS     = -lsmm_dnn_only23 -lderiv -lint  -lscalapack -lreflapack -lrefblas -lstdc++ -lfftw3 -lfftw3_threads -lcudart -lcublas -lcufft -lrt -lnvToolsExt -lxc
+
+OBJECTS_ARCHITECTURE = machine_gfortran.o
+
