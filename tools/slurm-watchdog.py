@@ -17,7 +17,7 @@ from os import path
 #===============================================================================
 def main():
     if(len(sys.argv) != 3):
-        print "Usage: slurm-watchdog.py parent-pid <file-with-jobids>"
+        print "Usage: slurm-watchdog.py <parent-pid> <file-with-jobids>"
         sys.exit(1)
 
     pid = sys.argv[1]
