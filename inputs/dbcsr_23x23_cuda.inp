@@ -7,17 +7,18 @@
 &END GLOBAL
 &TEST
   &CP_DBCSR
-     M 13800
-     N 13800
-     K 6900
+     M 8050
+     N 8050
+     K 8050
      TRANSA FALSE
      TRANSB TRUE
      N_LOOP 5
-     ASPARSITY 0.5
-     BSPARSITY 0.5
-     CSPARSITY 0.5
+     ASPARSITY 0.0001
+     BSPARSITY 0.0001
+     CSPARSITY 0.0001
      bs_m 1 23
      bs_n 1 23
      bs_k 1 23
+	 KEEPSPARSE .FALSE.
   &END
 &END TEST
