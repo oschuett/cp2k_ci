@@ -14,7 +14,7 @@ def main():
 
     table = dict()
     reference = float(sys.argv[1])
-	tolerance = float(sys.argv[2])
+    tolerance = float(sys.argv[2])
     files = sys.argv[2:]
     for fn in files:
         content = open(fn).read()
