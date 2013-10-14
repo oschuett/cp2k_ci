@@ -13,7 +13,7 @@ LD       = mpif90
 AR       = ar -r
 
 CPPFLAGS = 
-DFLAGS   = -D__GFORTRAN -D__FFTSG -D__LIBINT -D__FFTW3 -D__parallel -D__SCALAPACK -D__BLACS -D__HAS_smm_dnn -D__HAS_smm_vec -D__NO_MPI_THREAD_SUPPORT_CHECK -D__DBCSR_CUDA -D__CUDA_PROFILING -D__LIBXC2 -D__STATM_RESIDENT
+DFLAGS   = -D__GFORTRAN -D__FFTSG -D__LIBINT -D__FFTW3 -D__parallel -D__SCALAPACK -D__BLACS -D__HAS_smm_dnn -D__NO_MPI_THREAD_SUPPORT_CHECK -D__DBCSR_CUDA -D__CUDA_PROFILING -D__LIBXC2 -D__STATM_RESIDENT
 FCFLAGS  = -fno-omit-frame-pointer -fopenmp -O3 -march=native -ffast-math -ffree-form -g $(DFLAGS)
 LDFLAGS  = $(FCFLAGS)  -L/data/vjoost/libint/install/lib/ -L/data/schuetto/libsmm/lib/  -L/data/vjoost/scalapack/scalapack_installer_1.0.2/install/lib/ -L/usr/local/cuda/lib64 -L/data/vjoost/libxc-2.0.1/install/lib
 
