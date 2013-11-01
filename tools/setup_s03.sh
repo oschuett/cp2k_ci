@@ -9,7 +9,7 @@ source /data/vjoost/openmpi-1.6.3/setup
 # here the order matters :-(
 source /etc/profile.d/modules.sh
 module load intel-2013.0.079
-module load openmpi-x86_64
+#module load openmpi-x86_64
 module load cuda-5.5.22-x86_64
 
 set -x
