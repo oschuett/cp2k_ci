@@ -3,6 +3,9 @@
   RUN_TYPE NONE
   &DBCSR
     mm_driver CUDA
+	&CUDA
+	   priority_buffers 80
+	&ENd CUDA
   &END DBCSR
 &END GLOBAL
 &TEST
