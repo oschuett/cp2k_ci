@@ -7,10 +7,10 @@ FC       = gfortran
 LD       = gfortran
 AR       = ar -r
 CPPFLAGS = 
-DFLAGS   = -D__GFORTRAN -D__FFTSG -D__LIBINT -D__FFTW3 -D__HAS_smm_dnn -D__DBCSR_CUDA -D__STATM_RESIDENT -D__PW_CUDA -D__LIBXC2 -I/data/vjoost/fftw-3.3.3/install-avx/include/
+DFLAGS   = -D__GFORTRAN -D__FFTSG -D__LIBINT -D__FFTW3 -D__HAS_smm_dnn -D__HAS_smm_dnt  -D__DBCSR_CUDA -D__STATM_RESIDENT -D__PW_CUDA -D__LIBXC2 -I/data/vjoost/fftw-3.3.3/install-avx/include/
 FCFLAGS  = -fopenmp -O3 -march=native -ffast-math -g -ffree-form $(DFLAGS)
-LDFLAGS  = $(FCFLAGS)  -L/data/vjoost/libint/install/lib/ -L/data/vjoost/build_libsmm_d_v3/lib  -L/opt/intel/composerxe-2011.3.174/mkl/lib/intel64 -L/usr/local/cuda/lib64 -L/data/vjoost/fftw-3.3.3/install-avx/lib/ -L/data/vjoost/libxc-2.0.1/install/lib/
-LIBS     = -lxc -lsmm_dnn -lderiv -lint -lstdc++ -lfftw3_threads -lfftw3  -lmkl_gf_lp64 -lmkl_sequential -lmkl_core -lcudart -lcufft -lcublas -lrt
+LDFLAGS  = $(FCFLAGS)  -L/data/vjoost/libint/install/lib/ -L/data/schuetto/libsmm/lib/ -L/data/schuetto/libsmm_nt/lib/  -L/opt/intel/composerxe-2011.3.174/mkl/lib/intel64 -L/usr/local/cuda/lib64 -L/data/vjoost/fftw-3.3.3/install-avx/lib/ -L/data/vjoost/libxc-2.0.1/install/lib/
+LIBS     = -lxc -lsmm_dnn_only23 -lsmm_dnt_only23  -lderiv -lint -lstdc++ -lfftw3_threads -lfftw3  -lmkl_gf_lp64 -lmkl_sequential -lmkl_core -lcudart -lcufft -lcublas -lrt
 NVFLAGS  = $(DFLAGS) -g -O2 -arch sm_35 --compiler-options -fopenmp
 NVFLAGS  = $(DFLAGS) -g -O2 -arch sm_35
 
