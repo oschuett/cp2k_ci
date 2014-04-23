@@ -11,7 +11,7 @@ FCFLAGS  = -fopenmp -g -O3 -ffast-math -funroll-loops -ffree-form -fbounds-check
 CFLAGS   = $(FCFLAGS) 
 LDFLAGS  = $(FCFLAGS)
 #
-LIBS     = -L/users/vondele/libsmm/ -lsmm_dnn_cce_interlagos -L/project/s441/vondele/libint/lib/ -lderiv_ham -lint_ham  -lstdc++ 
+LIBS     = -L/users/vondele/libsmm/ -lsmm_dnn_cce_interlagos -L/project/ch5/vondele/libint/lib/ -lderiv_ham -lint_ham  -lstdc++ 
 
 
 
