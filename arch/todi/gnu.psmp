@@ -13,7 +13,7 @@ CFLAGS   = $(FCFLAGS)
 LDFLAGS  = $(FCFLAGS)
 NVFLAGS  = $(DFLAGS) -g -O2 -arch sm_35
 #
-LIBS     = -L/users/vondele/libsmm/ -lsmm_dnn_cce_interlagos -L/project/ch5/vondele/libint/lib/ -L/users/schuetto/libxc-2.0.2/install/lib/ -lxc -lderiv_ham -lint_ham  -lcudart -lcufft -lnvToolsExt -lrt -lstdc++ 
+LIBS     = -L/users/vondele/libsmm/ -lsmm_dnn_cce_interlagos -L/project/ch5/vondele/libint/lib/ -L/users/schuetto/libxc-2.0.2/install/lib/ -lxc -lderiv_ham -lint_ham  -lcudart -lcufft -lcublas -lnvToolsExt -lrt -lstdc++ 
 
 
 
